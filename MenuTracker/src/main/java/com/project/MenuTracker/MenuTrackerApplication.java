@@ -9,7 +9,7 @@ public class MenuTrackerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MenuTrackerApplication.class, args);
 
-		System.out.println("hello world!");
+		System.out.println("world hello!");
 	}
 
 }
