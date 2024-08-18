@@ -1,4 +1,4 @@
-package com.project.MenuTracker;
+package com.project.MenuTracker.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
