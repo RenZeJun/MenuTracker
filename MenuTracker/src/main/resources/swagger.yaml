@@ -1,0 +1,62 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "MenuTracker"
+  description: "This is a sample API for demonstrating Swagger 2 in a Spring Boot project."
+  termsOfService: "http://example.com/terms/"
+  contact:
+    name: "API Support"
+    url: "http://www.example.com/support"
+    email: "support@example.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+
+host: "localhost:8080"
+basePath: "/api"
+schemes:
+  - "http"
+
+paths:
+  /users/{userId}:
+    get:
+      summary: "Returns a user by ID"
+      description: "Fetches a user based on the provided ID."
+      operationId: "getUserById"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "userId"
+          in: "path"
+          description: "The ID of the user to fetch"
+          required: true
+          type: "integer"
+          format: "int64"
+          minimum: 1
+      responses:
+        200:
+          description: "User retrieved successfully"
+          schema:
+            $ref: "#/definitions/User"
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "User not found"
+
+definitions:
+  User:
+    type: "object"
+    required:
+      - "id"
+      - "name"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+        example: 1
+      name:
+        type: "string"
+        example: "John Doe"
+      email:
+        type: "string"
+        example: "john.doe@example.com"
